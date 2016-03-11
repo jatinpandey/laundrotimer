@@ -17,7 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    application.applicationIconBadgeNumber = 0;
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSLog(@"Received notification");
+    application.applicationIconBadgeNumber = 0;
+    // Show alert controller saying laundry ready
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ done", notification.userInfo[@"component"]] message:@"Go get your shit out of the machine" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"I will" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"user confirmed he's going to take shit out of component");
+    }];
+    [alertController addAction:okAction];
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:^{
+        
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

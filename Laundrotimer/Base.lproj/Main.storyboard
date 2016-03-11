@@ -1,25 +1,212 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gEE-vS-UBB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Washer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="Washer" id="BYZ-38-t0r" customClass="WasherPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="bIW-ri-v5l"/>
+                        <viewControllerLayoutGuide type="bottom" id="1us-YZ-8hB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4V-9k-BEd">
+                                <rect key="frame" x="0.0" y="125" width="320" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9h-KU-Uh0">
+                                <rect key="frame" x="89" y="439" width="142" height="30"/>
+                                <state key="normal" title="Set washer duration!"/>
+                                <connections>
+                                    <action selector="setWasherCycle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcm-us-zI0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Washer cycle in minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-G9-kgz">
+                                <rect key="frame" x="67" y="90" width="185.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h1-R1-gyU">
+                                <rect key="frame" x="139" y="356.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E4V-9k-BEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9pz-LJ-Yah"/>
+                            <constraint firstItem="Cce-G9-kgz" firstAttribute="top" secondItem="bIW-ri-v5l" secondAttribute="bottom" constant="70" id="O0k-yS-Hxl"/>
+                            <constraint firstItem="0h1-R1-gyU" firstAttribute="top" secondItem="E4V-9k-BEd" secondAttribute="bottom" constant="15" id="QES-A0-CJ4"/>
+                            <constraint firstItem="1us-YZ-8hB" firstAttribute="top" secondItem="Y9h-KU-Uh0" secondAttribute="bottom" constant="50" id="Tf2-sU-hRb"/>
+                            <constraint firstItem="E4V-9k-BEd" firstAttribute="top" secondItem="Cce-G9-kgz" secondAttribute="bottom" constant="15" id="dc0-ok-crI"/>
+                            <constraint firstItem="Y9h-KU-Uh0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eRg-4I-pqf"/>
+                            <constraint firstItem="Cce-G9-kgz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iDD-ra-Z6M"/>
+                            <constraint firstItem="0h1-R1-gyU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="osA-th-dZD"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Washer" id="wcK-xZ-yue"/>
+                    <connections>
+                        <outlet property="minuteLabel" destination="0h1-R1-gyU" id="7NH-Dl-XEd"/>
+                        <outlet property="washerPickerView" destination="E4V-9k-BEd" id="PZu-gh-obs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="540" y="-2"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DQy-Ss-QS9">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gEE-vS-UBB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="zSa-gr-U0E">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="T6E-e7-tfU" kind="relationship" relationship="viewControllers" id="DKd-2g-NEP"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="303-d2-J1N"/>
+                        <segue destination="ivH-3U-pnC" kind="relationship" relationship="viewControllers" id="wlc-Im-2kK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Zg-U8-vqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="335"/>
+        </scene>
+        <!--Start-->
+        <scene sceneID="FLO-K5-LH6">
+            <objects>
+                <viewController title="Start" id="T6E-e7-tfU" customClass="StartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q0m-cW-cX0"/>
+                        <viewControllerLayoutGuide type="bottom" id="AKO-rV-cbU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FgN-h3-v9P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="washer" translatesAutoresizingMaskIntoConstraints="NO" id="qsG-86-JcK">
+                                <rect key="frame" x="62" y="47" width="196" height="180"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="7Qm-ad-sY4"/>
+                                    <constraint firstAttribute="width" constant="196" id="IQC-GX-iPx"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3Ox-58-duE" appends="YES" id="tbS-Kq-3Om"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to start dryer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo9-U1-x5c">
+                                <rect key="frame" x="89" y="467" width="142" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to start washer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-Vh-GbD">
+                                <rect key="frame" x="82" y="239" width="157" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dryer" translatesAutoresizingMaskIntoConstraints="NO" id="NrH-FY-2ly">
+                                <rect key="frame" x="39" y="279" width="230" height="180"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="Nbl-aN-TOb"/>
+                                    <constraint firstAttribute="height" constant="180" id="ejX-Nr-CSW"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Gbf-5E-Q3G" appends="YES" id="KzU-kX-Vxk"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eo9-U1-x5c" firstAttribute="centerX" secondItem="FgN-h3-v9P" secondAttribute="centerX" id="8Z8-Eg-2Gj"/>
+                            <constraint firstItem="qsG-86-JcK" firstAttribute="top" secondItem="q0m-cW-cX0" secondAttribute="bottom" constant="27" id="HyA-pa-OCn"/>
+                            <constraint firstItem="NrH-FY-2ly" firstAttribute="centerX" secondItem="FgN-h3-v9P" secondAttribute="centerX" constant="-6" id="Phf-kd-yFy"/>
+                            <constraint firstItem="eo9-U1-x5c" firstAttribute="top" secondItem="NrH-FY-2ly" secondAttribute="bottom" constant="8" id="RRW-50-cmL"/>
+                            <constraint firstItem="fvr-Vh-GbD" firstAttribute="top" secondItem="qsG-86-JcK" secondAttribute="bottom" constant="12" id="VHH-rW-DDX"/>
+                            <constraint firstItem="qsG-86-JcK" firstAttribute="centerX" secondItem="FgN-h3-v9P" secondAttribute="centerX" id="Yp8-i6-qa2"/>
+                            <constraint firstItem="AKO-rV-cbU" firstAttribute="top" secondItem="eo9-U1-x5c" secondAttribute="bottom" constant="31.5" id="di4-9j-LIV"/>
+                            <constraint firstItem="fvr-Vh-GbD" firstAttribute="centerX" secondItem="FgN-h3-v9P" secondAttribute="centerX" id="hdh-aC-RuR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Laundry" id="ZxK-B0-wab"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcJ-Iq-mOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3Ox-58-duE" userLabel="Washer Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onStartWasher:" destination="T6E-e7-tfU" id="Bac-F9-ZDP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Gbf-5E-Q3G" userLabel="Dryer Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onStartDryer:" destination="T6E-e7-tfU" id="9Ro-n7-x2n"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="540" y="694"/>
+        </scene>
+        <!--Dryer-->
+        <scene sceneID="iw0-HC-t8B">
+            <objects>
+                <viewController title="Dryer" id="ivH-3U-pnC" customClass="DryerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ms-Rs-y3a"/>
+                        <viewControllerLayoutGuide type="bottom" id="y0z-WK-z7x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BmR-wy-SbT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iV3-Hv-mrm">
+                                <rect key="frame" x="0.0" y="125.5" width="320" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRm-PT-cI1">
+                                <rect key="frame" x="96" y="439" width="129" height="30"/>
+                                <state key="normal" title="Set dryer duration!"/>
+                                <connections>
+                                    <action selector="setDryerCycle:" destination="ivH-3U-pnC" eventType="touchUpInside" id="vJw-9T-7aC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dryer cycle in minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MV-st-gg2">
+                                <rect key="frame" x="75" y="90" width="169.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5MV-st-gg2" firstAttribute="centerX" secondItem="BmR-wy-SbT" secondAttribute="centerX" id="GGN-6R-dB3"/>
+                            <constraint firstItem="5MV-st-gg2" firstAttribute="top" secondItem="7Ms-Rs-y3a" secondAttribute="bottom" constant="70" id="MJx-10-17r"/>
+                            <constraint firstItem="XRm-PT-cI1" firstAttribute="centerX" secondItem="BmR-wy-SbT" secondAttribute="centerX" id="nDs-Zw-dCe"/>
+                            <constraint firstItem="iV3-Hv-mrm" firstAttribute="centerX" secondItem="BmR-wy-SbT" secondAttribute="centerX" id="q8I-wE-Td5"/>
+                            <constraint firstItem="y0z-WK-z7x" firstAttribute="top" secondItem="XRm-PT-cI1" secondAttribute="bottom" constant="50" id="wtd-Ox-H4j"/>
+                            <constraint firstItem="iV3-Hv-mrm" firstAttribute="top" secondItem="5MV-st-gg2" secondAttribute="bottom" constant="15" id="zgr-1r-Icw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dryer" id="KIl-4j-Kks"/>
+                    <connections>
+                        <outlet property="dryerPickerView" destination="iV3-Hv-mrm" id="w3p-Be-c5C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCT-j1-bbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="-2"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dryer" width="1440" height="1080"/>
+        <image name="washer" width="1600" height="1600"/>
+    </resources>
 </document>
